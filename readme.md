@@ -89,17 +89,20 @@ npm install
 
 ### Open Wine API
 
-The Wine Management application uses a REST API as a data source for it to display wines by regions, with their details, a photo of the bottle, etc ... This API is actually a small server NodeJS / Express with memory data available in the aPI folder. For all stages of the workshop you will need this API to power your application. So you can already start the API server in a separate tab for your device so that it is always available.
+The app uses a REST API as a data source to display wines by regions, with their details, a photo of the bottle, etc ... This API is actually a small server written with NodeJS / Express, data are store in memory.
 
-To start the server exposing the API, run the following commands:
+You can use the online version of the API deployed on Heroku. You can find the documentation of the API [here](https://wines-api.herokuapp.com/) or even [here](http://petstore.swagger.io/?url=https://react-bootcamp.github.io/react-wines/swagger.json). You can also use a graphql version of the API available [here](https://wines-api-graphql.herokuapp.com/graphql). We recommend that you read at least once on this documentation to get an overall idea of ​​the data provided by the API to power your application.
 
-$ Cd api
-$ Npm install
-$ Npm start
-Then go to http: // localhost: 3000 to explore the documentation of the different routes available. We recommend that you go at least once on this documentation to get an overall idea of ​​the data provided by the API to power your application.
+If you don't want to/can't use the online version of the API, and want to run it on your machine, just use the following commands
 
+```sh
+git clone https://github.com/react-bootcamp/wines-api.git wines-api
+cd wines-api
+npm install
+npm start
+```
 
-### Common React Patterns
+Then go to [http://localhost:3000](http://localhost:3000) to explore the documentation of the different routes available.
 
 ### Steps
 
