@@ -83,8 +83,12 @@ To install the project dependencies, just run the following command in the proje
 
 ```sh
 npm install
-# or if you have `yarn` installed
-# yarn install
+```
+
+or if you want to use `yarn` instead
+
+```sh
+yarn install
 ```
 
 ### Open Wine API
