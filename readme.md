@@ -29,7 +29,7 @@ the technical requirements are the following
 
 ### Node
 
-Node is the first requirement for the workshop. You need to install at least version 5.x and version 3.x for `npm`. You can get it on the official website at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+Node is the first requirement for the workshop. You can get it on the official website at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 You can verify your current version of `node` and `npm` by running the following commands :
 
@@ -46,6 +46,10 @@ you can upgrade an existing version of npm by running the following command :
 ```sh
 npm update -g npm
 ```
+
+You’ll need to have Node >= 4 on your machine.
+
+We strongly recommend to use `node` >= 6 and `npm` >= 3 for faster installation speed and better disk usage. You can use `nvm` to easily switch Node versions between different projects.
 
 ### Git
 
