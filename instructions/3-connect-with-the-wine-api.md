@@ -23,7 +23,42 @@ You can find some doc about `fetch` here
 
 ## Unidirectional data flow
 
-State at the root of the tree, pass data and mutators as props to children in depth
+As explained in the previous step, here we will make heavy usage of the unidirectional data flow pattern. The global state of the app will be stored in the highest component of the component tree. The data will be passed to the children as props. Each time the global state will mutate, the `<WineApp />` component will be redraw and all the children components will be updated.
+
+One of the issue with that pattern is that children comonents will need to trigger state mutation in the root component. To do that, just pass state mutation function to the children component as props in depth.
+
+```javascript
+import React from 'react';
+
+const App = React.createClass({
+  getInitialState() {
+    return {    // the state of the app
+      count: 0
+    };
+  },
+  incrementCounter() { // the state mutator function
+    this.setState({ count: this.state.count + 1 });
+  },
+  render() {
+    return (
+      <div>
+        <h1>the count is : {this.state.count}</h1>
+        <IncrementButton
+          count={this.state.count} // pass state as props
+          incrementCounter={this.incrementCounter} /> // pass state mutator as props
+      </div>
+    );
+  }
+});
+
+const IncrementButton = React.createClass({
+  render() {
+    return (
+      <button type="button" onClick={this.props.incrementCounter}>{this.props.count} +1</button>
+    );
+  }
+});
+```
 
 ## How to start
 
