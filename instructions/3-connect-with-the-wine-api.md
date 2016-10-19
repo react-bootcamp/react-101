@@ -10,6 +10,17 @@ The URL you need are the following
 * `https://wines-api.herokuapp.com/api/wines?region=:region` => returns an array of wines
 * `https://wines-api.herokuapp.com/api/wines/:id` => returns a wine
 
+The HTTP client you will use is `fetch`. It's the new standard way to fetch data over http in the browser. Here we use the `whatwg-fetch` npm module to polyfill `fetch` if necessary.
+
+You can find some doc about `fetch` here
+
+* https://www.npmjs.com/package/whatwg-fetch
+* https://fetch.spec.whatwg.org/
+* https://github.github.io/fetch/
+* https://github.com/github/fetch
+
+**WARNING**: `fetch` makes heavy usage of Javascript `Promise`. You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
 ## Unidirectional data flow
 
 State at the root of the tree, pass data and mutators as props to children in depth
