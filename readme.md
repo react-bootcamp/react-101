@@ -92,6 +92,7 @@ If you want to pre-install the dependencies of the project to avoid any network 
 git clone https://github.com/react-bootcamp/react-101 react-101
 cd react-101
 npm install
+npm install -g create-react-app
 ```
 
 or if you want to use `yarn` instead run
@@ -100,6 +101,7 @@ or if you want to use `yarn` instead run
 git clone https://github.com/react-bootcamp/react-101 react-101
 cd react-101
 yarn install
+yarn global add create-react-app
 ```
 
 ### Open Wine API
