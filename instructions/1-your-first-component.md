@@ -131,7 +131,9 @@ import { MyComponent } from './MyComponent';
 ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById('app'));
 ```
 
-in React, there is a special property used to create nested components. It's the `children` property
+In that case, the displayed message will be `Hello World!`
+
+In React, there is a special property used to create nested components. It's the `children` property
 
 ```javascript
 import React, { Component } from 'react';
@@ -162,4 +164,4 @@ ReactDOM.render(
 );
 ```
 
-in that case, `this.props.children` will be equal to `<p>Still a very useful component</p>`
+in that case, the displayed message will be `Hello World!` and `this.props.children` will be equal to `<p>Still a very useful component</p>`
