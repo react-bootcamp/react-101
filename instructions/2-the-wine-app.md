@@ -24,7 +24,7 @@ Before you start coding, there are few questions to ask :
 * Ho do my components communicate? Which events should I manage?
 * Once I'm ready, how to start coding the app?
 
-### Component hierarchy
+## Component hierarchy
 
 The first thing to do is to *"Think React"* :-)
 
@@ -33,6 +33,12 @@ From the wireframe we can identify sevral components :
 * `Regions`: the component that manages the list of wine regions (left column)
 * `WineList`: the component that manages the list of the wines of the selected region (middle column)
 * `Wine`: the component that manages the details of the selected wine (right column)
-* `WineApp`: this is a sort of parent component, that assemble the other components. This is our application BTW!
+* `WineApp`: this is a sort of parent component, that assemble the other components. This is our application!
 
 <img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/wine-app-mockup-components.png' width='800' alt='The Wine App Wireframe'>
+
+## Props and state
+
+## Communication between components
+
+## How to start coding?
