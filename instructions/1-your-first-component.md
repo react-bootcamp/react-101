@@ -86,3 +86,78 @@ export const MyComponent = () => (
 ```
 
 ## Mounting a component into the DOM
+
+Now we want to display the component in the browser. To do that we will use `react-dom` which is a specialized library to render a generic react component inside a DOM environment.
+
+We will use the `render` function of `ReactDOM` to do that
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { MyComponent } from './MyComponent';
+
+ReactDOM.render(<MyComponent />, document.getElementById('app'));
+```
+
+## Pass data to the component
+
+Now that we have a nice component, we want to pass some data inside it. To do that we will use component properties. Properties is an immutable object passed at component instanciation.
+To add properties to a component, you just have to declare it like an XML attribute.
+
+Let say we want our component to display a custom message
+
+```javascript
+import React, { Component } from 'react';
+
+export class MyComponent extends Component {
+  render() {
+    const message = this.props.message || 'I am a very useful component';
+    return (
+      <div className="my-component">
+        <h2>{message}</h2>
+      </div>
+    );
+  }
+}
+```
+
+now to user the property `message` we have to do something like
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { MyComponent } from './MyComponent';
+
+ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById('app'));
+```
+
+in React, there is a special property used to create nested components. It's the `children` property
+
+```javascript
+import React, { Component } from 'react';
+
+export class MyComponent extends Component {
+  render() {
+    const message = this.props.message || 'I am a very useful component';
+    return (
+      <div className="my-component">
+        <h2>{message}</h2>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+```
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { MyComponent } from './MyComponent';
+
+ReactDOM.render(
+  <MyComponent message="Hello World!">
+    <p>Still a very useful component</p>
+  </MyComponent>
+  , document.getElementById('app')
+);
+```
