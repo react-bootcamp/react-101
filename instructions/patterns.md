@@ -1,23 +1,149 @@
 # Classic patterns with React
 
-## A basic component
-
-## Mount a component into the dom
-
-## A stateful component
-
 ## Component styling
+
+There are several way to style a component. It's quite a challenge to encapsulate style for a component but also allow customization.
 
 ### Classic styling
 
-### Style a component with a css file
+You can style your components using the classic `class` attribute. In React, it's translated to the `className` property.
+
+```jsx
+<div className="a-class">...</div>
+```
+
+You can use multiple classes
+
+```jsx
+<div className="a-class another-class">...</div>
+```
+
+You can use some tricks to add classes conditionaly
+
+```jsx
+<div className={[condition1 ? 'a-class' : '', !condition1 ? 'another-class' : ''].join(' ')}>...</div>
+```
+
+### Style a component with a css file living next to the component
+
+Using webpack, it's pretty easy to inject CSS parts inside a javascript file
+
+```css
+.MyComponent-root-style {
+  color: red;
+  background-color: blue;
+}
+```
+
+```javascript
+import React from 'react';
+import './MyComponent.css';  // inject css (using webpack)
+
+export const MyComponent = React.createClass({
+  render() {
+    return (
+      <div className="MyComponent-root-style">...</div>
+    );
+  }
+})
+```
 
 ### Style a component with inline styling
 
-## Add props on `this.props.children`
+React let you write inline style pretty easily
 
-## Loading data from an HTTP services
+```javascript
+import React from 'react';
+
+const Styles = {
+  myComponent: {
+    color: 'red',
+    backgroundColor: 'blue',
+    height: 42 // implicit conversion to '42px',
+    width: '100%'
+  },
+  ...
+};
+
+export const MyComponent = React.createClass({
+  render() {
+    return (
+      <div style={Styles.myComponent}>...</div>
+    );
+  }
+})
+```
 
 ## Conditional display of components
 
-## Make an HTTP call
+if you want to display component conditionaly, you can use truthy/falsy trick
+
+```javascript
+export const MyComponent = React.createClass({
+  render() {
+    return (
+      <div>
+        {this.state.loading && (
+          <h2>Loading ...</h2>
+        )}
+        {!this.state.loading && (
+          <h2>Loaded</h2>
+        )}
+      </div>
+    );
+  }
+})
+```
+
+## Add props on `this.props.children`
+
+sometimes you want to write a component that will render its children, but you'd like to add some props to the children.
+It's quite useful with `react-router` for instance. To do that your can use `React.cloneElement`
+
+```javascript
+import React from 'react';
+
+export const MyComponent = React.createClass({
+  render() {
+    return (
+      <div>
+        <h2>{this.props.title}</h2>
+        {this.props.children && React.cloneElement(this.props.children, {
+          newProps: 'new prop value'
+        })}
+      </div>
+    );
+  }
+})
+```
+
+## Loading data from an HTTP services
+
+If you want to fetch some data when a component is mounted to the dom, use the lifecycle function `componentDidMount`
+
+```javascript
+export const MyComponent = React.createClass({
+  getInitialState() {
+    return {
+      location: null
+    };
+  },
+  componentDidMount() {
+    fetch('https://freegeoip.net/json/')
+      .then(r => r.json())
+      .then(location => this.setState({ location }));
+  },
+  render() {
+    return (
+      <div>
+        {!this.state.location && (
+          <h2>Loading ...</h2>
+        )}
+        {this.state.location && (
+          <pre>{JSON.stringify(this.state.location, null, 2)}</pre>
+        )}
+      </div>
+    );
+  }
+})
+```
