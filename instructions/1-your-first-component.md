@@ -161,3 +161,5 @@ ReactDOM.render(
   , document.getElementById('app')
 );
 ```
+
+in that case, `this.props.children` will be equal to `<p>Still a very useful component</p>`
