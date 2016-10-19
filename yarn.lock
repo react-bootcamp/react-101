@@ -1058,8 +1058,8 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-db@^1.0.30000525, caniuse-db@^1.0.30000527, caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
-  version "1.0.30000559"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000559.tgz#afbd68916dd23bfd549c26520c78631fb5e2e393"
+  version "1.0.30000560"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000560.tgz#7f886302e912d15a6e53b81d6ab13de9dba95ee8"
 
 cardinal@^1.0.0:
   version "1.0.0"
@@ -2638,6 +2638,10 @@ is-fullwidth-code-point@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-1.0.0.tgz#ef9e31386f031a7f0d643af82fde50c457ef00cb"
   dependencies:
     number-is-nan "^1.0.0"
+
+is-fullwidth-code-point@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz#a3b30a5c4f199183167aaab93beefae3ddfb654f"
 
 is-glob@^2.0.0, is-glob@^2.0.1:
   version "2.0.1"
@@ -4705,8 +4709,8 @@ source-list-map@^0.1.4, source-list-map@~0.1.0:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.6.tgz#e1e6f94f0b40c4d28dcf8f5b8766e0e45636877f"
 
 source-map-support@^0.4.2:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.4.tgz#0df5765a05a560c91bc8f8641cf79f2affc0322e"
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.5.tgz#4438df4219e1b3c7feb674614b4c67f9722db1e4"
   dependencies:
     source-map "^0.5.3"
 
@@ -4790,6 +4794,13 @@ string-width@^1.0.1, string-width@^1.0.2:
     is-fullwidth-code-point "^1.0.0"
     strip-ansi "^3.0.0"
 
+string-width@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-2.0.0.tgz#635c5436cc72a6e0c387ceca278d4e2eec52687e"
+  dependencies:
+    is-fullwidth-code-point "^2.0.0"
+    strip-ansi "^3.0.0"
+
 string.prototype.codepointat@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/string.prototype.codepointat/-/string.prototype.codepointat-0.2.0.tgz#6b26e9bd3afcaa7be3b4269b526de1b82000ac78"
@@ -4858,15 +4869,15 @@ swap-case@^1.1.0:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.1.4.tgz#02b279348d337debc39694c5c95f882d448a312a"
 
 table@^3.7.8:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/table/-/table-3.8.0.tgz#252166c7f3286684a9d561b0f3a8929caf3a997b"
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/table/-/table-3.8.3.tgz#2bbc542f0fda9861a755d3947fefd8b3f513855f"
   dependencies:
     ajv "^4.7.0"
     ajv-keywords "^1.0.0"
     chalk "^1.1.1"
     lodash "^4.0.0"
     slice-ansi "0.0.4"
-    string-width "^1.0.1"
+    string-width "^2.0.0"
 
 tapable@^0.1.8, tapable@~0.1.8:
   version "0.1.10"

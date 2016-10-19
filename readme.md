@@ -19,7 +19,7 @@ The main feature of the app are
 \* *Alcohol abuse is dangerous for health, consume with moderation;-)*
 
 <img
-src='https://github.com/react-bootcamp/react-bootcamp.github.io/raw/master/img/wine-app.png' width='800' alt='First run'>
+src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/wine-app.png' width='800' alt='First run'>
 
 ## Technical requirements
 
@@ -86,15 +86,19 @@ In order to have specific tools to react in your web browser, install **React De
 
 ## Install dependencies
 
-To install the project dependencies, just run the following command in the project:
+If you want to pre-install the dependencies of the project to avoid any network issue, first clone the `react-101` repo then run the `npm install` command
 
 ```sh
+git clone https://github.com/react-bootcamp/react-101 react-101
+cd react-101
 npm install
 ```
 
-or if you want to use `yarn` instead
+or if you want to use `yarn` instead run
 
 ```sh
+git clone https://github.com/react-bootcamp/react-101 react-101
+cd react-101
 yarn install
 ```
 

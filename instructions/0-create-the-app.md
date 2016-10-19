@@ -42,7 +42,7 @@ You will see the build errors and lint warnings in the console.
 
 and in the browser
 
-<img src='https://github.com/react-bootcamp/react-bootcamp.github.io/raw/master/img/error.png' width='600' alt='First run'>
+<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/error.png' width='600' alt='First run'>
 
 ### Test the app
 
@@ -112,7 +112,34 @@ npm start
 
 then open your browser at [http://localhost:3000](http://localhost:3000)
 
-<img src='https://github.com/react-bootcamp/react-bootcamp.github.io/raw/master/img/run.png' width='600' alt='First run'>
+<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/run.png' width='600' alt='First run'>
+
+## react-101 dependencies
+
+if you look at the `package.json` file you can see something like that
+
+```javascript
+{
+  "name": "react-101",       // the name of your project
+  "version": "1.0.0",        // its version using semver
+  "private": true,           // yes its a private project
+  "devDependencies": {       // all the tools to buidl and run your project
+    "react-scripts": "0.6.1" // a collection of curated tools and libs by facebook
+  },
+  "dependencies": {          // all the libs used at runtime by your application
+    "es6-shim": "^0.35.1",   // polyfill everything we need to use ES6
+    "react": "^15.3.2",      // the react core lib
+    "react-dom": "^15.3.2",  // the react dom lib
+    "whatwg-fetch": "^1.0.0" // a polyfill for the fetch lib
+  },
+  "scripts": {               // a bunch a scripts to run your app, build it and test it
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject" // a very interesting feature to remove react-script and evolve your project as you want
+  }
+}
+```
 
 # What's next
 
