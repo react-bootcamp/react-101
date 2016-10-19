@@ -18,6 +18,8 @@ The main features of the app are
 
 \* *Alcohol abuse is dangerous for health, consume with moderation ;-)*
 
+You can try the app [here](https://react-bootcamp.github.io/react-wines/)
+
 <img
 src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/wine-app.png' width='800' alt='The Wine App'>
 
