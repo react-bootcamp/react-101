@@ -65,7 +65,7 @@ now, just pass the data from the state and useful functions to the child compone
 
 Your app should work just like that
 
-<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/appworking.png' width='800' alt='First run'>
+<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/appworking.gif' width='800' alt='First run'>
 
 # What's next
 
