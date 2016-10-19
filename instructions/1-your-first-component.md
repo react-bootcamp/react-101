@@ -304,7 +304,7 @@ export const Clock = React.createClass({
 });
 ```
 
-# Write a Wine component
+# It's time to write a Wine component
 
 Let's write a nice component that will display details of a wine. This wine will be provided as a property.
 
@@ -354,13 +354,13 @@ ReactDOM.render(
 );
 ```
 
-now it's up to you, let say a wine is an object like that
+now it's up to you !!! let say a wine is an object like that
 
 ```javascript
 {
     "id": "chevrol-bel-air",
     "name": "Château Chevrol Bel Air",
-    "type": "Rouge",
+    "type": "Red",
     "appellation": {
         "name": "Lalande-de-Pomerol",
         "region": "Bordeaux"
@@ -373,7 +373,7 @@ now it's up to you, let say a wine is an object like that
 }
 ```
 
-and we want the component to look like
+and we want the component to look like the following HTML snippet
 
 ```html
 <div class="card horizontal">
@@ -391,3 +391,46 @@ and we want the component to look like
 ```
 
 # Adding likes
+
+Now we are going to make the `<Wine />` component stateful. We are going to add a `like` button to count how many likes the wine gets
+
+Let say the `<Wine />` component should now look like
+
+```html
+<div class="card horizontal">
+  <div class="card-stacked">
+    <div class="card-content">
+      <h3>Wine name</h3>
+      <br/>
+      <p><b>Appellation:</b> Wine appelation name</p>
+      <p><b>Region:</b> Wine appelation region</p>
+      <p><b>Color:</b> Wine type</p>
+      <p><b>Grapes:</b> Wine grape 1, Wine grape 2</p>
+    </div>
+    <div class="card-action">
+      <a class="waves-effect waves-teal btn-flat">
+        <span>Like <i className="material-icons left">thumb_up</i> (42)</span>
+      </a>
+   </div>
+  </div>
+</div>
+```
+
+to achieve that, you will create a new component called `<LikeButton />` with the following contract
+
+```javascript
+import React, { PropTypes } from 'react';
+
+export const LikeButton = React.createClass({
+  propTypes: {
+    startCounterAt: PropTypes.number
+  },
+  ...
+});
+```
+
+the `<LikeButton />` component will have a state to hold the number of likes for the button and a click listener to increment the like counter.
+
+# What's next
+
+Now you're ready to write the Wine application. Go to the [next step](./2-the-wine-app.md) to start writing it.
