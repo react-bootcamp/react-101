@@ -133,6 +133,51 @@ ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById(
 
 In that case, the displayed message will be `Hello World!`
 
+You can provide default values for `props` using `getDefaultProps`
+
+```javascript
+import React from 'react';
+
+export const MyComponent = React.createClass({
+  getDefaultProps() {
+    return {
+      message: 'I am a very useful component';
+    };
+  },
+  render() {
+    return (
+      <div className="my-component">
+        <h2>{this.props.message}</h2>
+      </div>
+    );
+  }
+});
+```
+
+You can provide some validation for the `props` of a component using `React.PropTypes` to have error message in developement. it's quite useful when you provide components to other dev teams.
+
+```javascript
+import React, { PropTypes } from 'react';
+
+export const MyComponent = React.createClass({
+  propTypes: {
+    message: PropTypes.string
+  },
+  getDefaultProps() {
+    return {
+      message: 'I am a very useful component';
+    };
+  },
+  render() {
+    return (
+      <div className="my-component">
+        <h2>{this.props.message}</h2>
+      </div>
+    );
+  }
+});
+```
+
 In React, there is a special property used to create nested components. It's the `children` property
 
 ```javascript
@@ -165,3 +210,184 @@ ReactDOM.render(
 ```
 
 in that case, the displayed message will be `Hello World!` and `this.props.children` will be equal to `<p>Still a very useful component</p>`
+
+## Store data inside the component using the component state
+
+If components `props` are not enought for your need, you can use the component `state`. The state is specific value for each component instance. Each time the value of the state is changed using `this.setState(...)`, this will trigger a full redraw of the component. Let's write a counter component
+
+Using `React.createClass`
+
+```javascript
+import React from 'react';
+
+export const Counter = React.createClass({
+  getInitialState() { // if you don't define getInitialState, your state will be null
+    return {
+      count: 0
+    };
+  },
+  incrementCounter() {
+    this.setState({ count: this.state.count + 1 }); // trigger a component redraw
+  },
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button type="button" onClick={this.incrementCounter}>increment</button>
+      </div>
+    );
+  }
+});
+```
+
+Using ES6 class
+
+```javascript
+import React, { Component } from 'react';
+
+export class Counter extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  incrementCounter() {
+    this.setState({ count: this.state.count + 1 });  // trigger a component redraw
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button type="button" onClick={this.incrementCounter}>increment</button>
+      </div>
+    );
+  }
+}
+```
+
+you can implement the counter as a functional component because functional component don't have a state.
+
+## Store data inside the component using the component instance
+
+If your when to store something technical in a component instance without triggering a redraw of the component, you can just store whatever you want on `this`
+
+```javascript
+import React from 'react';
+
+export const Clock = React.createClass({
+  getInitialState() { // if you don't define getInitialState, your state will be null
+    return {
+      time: Date.now()
+    };
+  },
+  update() {
+    this.setState({ time: Date.now() });
+  },
+  componentDidMount() { // will be called when component is mounted in the DOM
+    this.interval = setInterval(this.update, 1000); // here we store the interval id on the component instance
+  },
+  componentWillUnmount() { // will be called when component is removed from the DOM
+    clearInterval(this.interval);
+  },
+  render() {
+    return (
+      <div>
+        <h2>Count: {this.state.count}</h2>
+        <button type="button" onClick={this.incrementCounter}>increment</button>
+      </div>
+    );
+  }
+});
+```
+
+# Write a Wine component
+
+Let's write a nice component that will display details of a wine. This wine will be provided as a property.
+
+First let's just display it's name
+
+```javascript
+import React, { PropTypes } from 'react';
+
+export const Wine = React.createClass({
+  propTypes: {
+    wine: PropTypes.shape({
+      name: PropTypes.string
+    })
+  },
+  getDefaultProps() {
+    return {
+      wine: {
+        name: 'Some Wine'
+      };
+    };
+  },
+  render() {
+    return (
+      <div className="card horizontal">   
+        <div className="card-stacked">
+          <div className="card-content">
+            <h3>{this.props.wine.name}</h3>
+          </div>
+        </div>
+      </div>
+    );
+  }
+});
+```
+
+to mount it just write something like
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Wine } from './Wine';
+
+const wine = { name: 'Château Chevrol Bel Air' };
+
+ReactDOM.render(
+  <Wine wine={wine}/>, document.getElementById('app')
+);
+```
+
+now it's up to you, let say a wine is an object like that
+
+```javascript
+{
+    "id": "chevrol-bel-air",
+    "name": "Château Chevrol Bel Air",
+    "type": "Rouge",
+    "appellation": {
+        "name": "Lalande-de-Pomerol",
+        "region": "Bordeaux"
+    },
+    "grapes": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Cabernet Franc"
+    ]
+}
+```
+
+and we want the component to look like
+
+```html
+<div class="card horizontal">
+  <div class="card-stacked">
+    <div class="card-content">
+      <h3>Wine name</h3>
+      <br/>
+      <p><b>Appellation:</b> Wine appelation name</p>
+      <p><b>Region:</b> Wine appelation region</p>
+      <p><b>Color:</b> Wine type</p>
+      <p><b>Grapes:</b> Wine grape 1, Wine grape 2</p>
+    </div>
+  </div>
+</div>
+```
+
+# Adding likes
