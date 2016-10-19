@@ -60,7 +60,7 @@ the `npm start` command will launch a development server with a development vers
 npm run build
 ```
 
-This will create a `dist` directory that will contains everything needed to deploy your app.
+This will create a `dist` directory that will contain everything needed to deploy your app.
 
 ## The file structure of the react-101 project
 
@@ -143,4 +143,4 @@ if you look at the `package.json` file you can see something like that
 
 # What's next
 
-No you're ready to write your first React component. Go to the [next step](./1-your-first-component.md) to learn how to do that.
+Now you're ready to write your first React component. Go to the [next step](./1-your-first-component.md) to learn how to do that.
