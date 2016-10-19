@@ -8,22 +8,22 @@ React 101 is a workshop for those that want to learn React.js and its ecosystem,
 
 ## The "Open Wine Database" app
 
-during the workshop you will create a webapp to manage your favorite wines* !
-The main feature of the app are
+During the workshop you will create a webapp to manage your favorite wines* !
+The main features of the app are
 
-* List the wine by regions
+* List the wines by regions
 * Display the details of a specific wine
 * Like a wine
 * Add comments on a wine
 
-\* *Alcohol abuse is dangerous for health, consume with moderation;-)*
+\* *Alcohol abuse is dangerous for health, consume with moderation ;-)*
 
 <img
 src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/wine-app.png' width='800' alt='First run'>
 
 ## Technical requirements
 
-the technical requirements are the following
+The technical requirements are the following
 
 * Node (version 5.x or 6.x) with NPM (at least version 3.x)
 * Git
@@ -104,7 +104,7 @@ yarn install
 
 ### Open Wine API
 
-The app uses a REST API as a data source to display wines by regions, with their details, a photo of the bottle, etc ... This API is actually a small server written with NodeJS / Express, data are store in memory.
+The app uses a REST API as a data source to display wines by regions, with their details, a photo of the bottle, etc ... This API is actually a small server written with NodeJS / Express, data are stored in memory.
 
 You can use the online version of the API deployed on Heroku. You can find the documentation of the API [here](https://wines-api.herokuapp.com/) or even [here](http://petstore.swagger.io/?url=https://react-bootcamp.github.io/react-wines/swagger.json). You can also use a graphql version of the API available [here](https://wines-api-graphql.herokuapp.com/graphql). We recommend that you read at least once on this documentation to get an overall idea of ​​the data provided by the API to power your application.
 
