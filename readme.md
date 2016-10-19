@@ -123,9 +123,9 @@ Then go to [http://localhost:3000](http://localhost:3000) to explore the documen
 ### Steps
 
 * [Step 0 : create the app](./instructions/0-create-the-app.md)
-* [Step 1 : write your first React component](1-your-first-component.md)
-* [Step 2 : write a first static version of the Open Wine Database app](2-the-wine-app.md)
-* [Step 3 : use the Open Wine API to feed the app](3-connect-with-the-wine-api.md)
-* [Step 4 : add support for likes](4-handle-likes.md)
-* [Step 5 : add support for comments](5-handle-comments.md)
-* [Step 6 : integrates a third party JS library](6-integrate-with-third-party-apis.md)
+* [Step 1 : write your first React component](./instructions/1-your-first-component.md)
+* [Step 2 : write a first static version of the Open Wine Database app](./instructions/2-the-wine-app.md)
+* [Step 3 : use the Open Wine API to feed the app](./instructions/3-connect-with-the-wine-api.md)
+* [Step 4 : add support for likes](./instructions/4-handle-likes.md)
+* [Step 5 : add support for comments](./instructions/5-handle-comments.md)
+* [Step 6 : integrates a third party JS library](./instructions/6-integrate-with-third-party-apis.md)
