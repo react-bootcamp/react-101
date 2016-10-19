@@ -74,8 +74,7 @@ Download and install Atom and install the following packages:
 * language-javascript-jsx
 * linter-eslint
 
-To learn how to manage Atom packages:
- https://atom.io/docs/latest/using-atom-atom-packages
+To learn how to manage Atom packages: http://flight-manual.atom.io/using-atom/sections/atom-packages/
 
 ### React Developer Tools
 
