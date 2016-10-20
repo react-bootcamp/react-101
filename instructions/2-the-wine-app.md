@@ -272,7 +272,10 @@ const WineApp = React.createClass({
   render() {
     return (
       ...
-      <Regions regions={this.state.regions} region={this.state.selectedRegion} onSelectRegion={this.onSelectRegion} />
+      <Regions
+        regions={this.state.regions}
+        region={this.state.selectedRegion} 
+        onSelectRegion={this.onSelectRegion} />
       ...
     );
   }
