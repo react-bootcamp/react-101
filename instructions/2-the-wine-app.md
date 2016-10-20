@@ -80,6 +80,41 @@ Create all *Dumb Components*: `Regions`, `WineList` and `Wine` and implement the
 
 ##### `Regions`
 
+The `Region` component should look like this:
+
+```html
+<div className="col s12 m6 l3">
+  <h2 className="center-align">Regions</h2>
+  <div className="collection">
+    {this.props.regions.map(region =>
+      <a key={region}
+        href="#!"
+        onClick={e => this.onSelectRegion(e, region)}
+        className={['collection-item', region === this.props.region ? 'active' : ''].join(' ')}>
+          {region}
+      </a>
+    )}
+  </div>
+</div>
+```
+
 ##### `WineList`
 
 ##### `Wine`
+
+#### Smart components
+
+`WineApp` is the only *Smart Component* in our wine app, it assembles the the whole *Dumb Components* created above.
+
+The `WineApp` component should look like this:
+
+```html
+<div className="container">
+  <h1 className="center-align">Open Wine Database</h1>
+  <div className="row">
+    <Regions ... />
+    <WineList ... />
+    <Wine ... />
+  </div>
+</div>
+```
