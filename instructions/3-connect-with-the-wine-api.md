@@ -54,7 +54,7 @@ const App = React.createClass({
 const IncrementButton = React.createClass({
   render() {
     return (
-      <button type="button" onClick={this.props.incrementCounter}>{this.props.count} +1</button>
+      <button type="button" onClick={this.props.incrementCounter}>{this.props.count} + 1</button>
     );
   }
 });

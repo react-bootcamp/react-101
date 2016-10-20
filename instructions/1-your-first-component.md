@@ -76,7 +76,7 @@ export class MyComponent extends Component {
 The last way to define a component is to use pure functions. It is quite useful to write small stateless components
 
 ```javascript
-import React, { Component } from 'react';
+import React from 'react';
 
 export const MyComponent = () => (
   <div className="my-component">
@@ -361,18 +361,18 @@ now it's up to you !!! let say a wine is an object like that
 
 ```javascript
 {
-    "id": "chevrol-bel-air",
-    "name": "Château Chevrol Bel Air",
-    "type": "Red",
-    "appellation": {
-        "name": "Lalande-de-Pomerol",
-        "region": "Bordeaux"
-    },
-    "grapes": [
-        "Cabernet Sauvignon",
-        "Merlot",
-        "Cabernet Franc"
-    ]
+  "id": "chevrol-bel-air",
+  "name": "Château Chevrol Bel Air",
+  "type": "Red",
+  "appellation": {
+    "name": "Lalande-de-Pomerol",
+    "region": "Bordeaux"
+  },
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Merlot",
+    "Cabernet Franc"
+  ]
 }
 ```
 
