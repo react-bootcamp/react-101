@@ -34,7 +34,7 @@ export function isWineLiked(id) {
 
 ## The `<LikeButton />` component
 
-Now, you have to write a new component to display the `like` button into a `<Wine />` component. This component will have the following contract
+Now, you have to write a new component to display the `like` button into a `<Wine />` component. The button will be added in the `card-action` section. This component will have the following contract
 
 ```javascript
 import React, { PropTypes } from 'react';
@@ -90,8 +90,9 @@ export const LikeButton = React.createClass({
   ...
 });
 ```
+## What it should look like
 
-The like button should work just like that
+And now your like button component should look something like that
 
 <img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/like.gif' width='800' alt='The like button'>
 
