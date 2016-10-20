@@ -147,3 +147,33 @@ export const MyComponent = React.createClass({
   }
 })
 ```
+
+## Binding a text input
+
+```javascript
+import React from 'react';
+
+const MyComponent = React.createClass({
+  getInitialState() {
+    return {
+      content: ''
+    };
+  },
+  onChange(e) {
+    this.setState({ content: e.target.value });
+  },
+  sendContent() {
+    const content = this.state.content;
+    this.setState({ content: '' }, () => {
+      // do whatever you want with content
+    });
+  },
+  render() {
+    return (
+      <div>
+        <input type="text" value={this.state.content} onChange={this.onChange} />
+        <button type="button" onClick={this.sendContent}>Send content</button>
+      </div>
+    );
+  }
+```

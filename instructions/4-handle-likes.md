@@ -56,7 +56,7 @@ when the wine is unliked, the button must look something like the following snip
 
 ```html
 <a class="waves-effect waves-teal btn-flat">
-  <span>Like <i className="material-icons left">thumb_up</i></span>
+  <span>Like <i class="material-icons left">thumb_up</i></span>
 </a>
 ```
 
@@ -64,7 +64,7 @@ when the wine is liked, the button must look something like the following snippe
 
 ```html
 <a class="waves-effect waves-teal btn-flat">
-  <span>Unlike <i className="material-icons left">thumb_down</i></span>
+  <span>Unlike <i class="material-icons left">thumb_down</i></span>
 </a>
 ```
 

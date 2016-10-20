@@ -67,13 +67,12 @@ export const Comment = React.createClass({
 });
 ```
 
-the view of `<Comment />` will look something like
+the view of `<Comment />` component will look something like
 
 ```html
-<p className="comment" data-title="title of the comment" data-date="date of the comment">
+<p class="comment" data-title="title of the comment" data-date="date of the comment">
   A very nice comment
 </p>
-
 ```
 
 ## What it should look like
