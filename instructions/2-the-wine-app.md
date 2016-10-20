@@ -80,6 +80,98 @@ Create all *Dumb Components*: `Regions`, `WineList` and `Wine` and implement the
 
 ##### `Regions`
 
+The `<Regions />` component just display a list of regions. The contract of the `<Regions />` component is the following
+
+```javascript
+import React, { PropTypes } from 'react';
+
+export const Regions = React.createClass({
+  propTypes: {
+    onSelectRegion: PropTypes.func,
+    regions: PropTypes.array, // an array of string
+    region: PropTypes.object // the selected region
+  },
+  ...
+});
+```
+
+the view of `<Regions />` component will look something like
+
+```html
+<div class="col s12 m6 l3">
+  <h2 class="center-align">Regions</h2>
+  <div class="collection">
+    <a href="#!"class="collection-item">Bordeaux</a>
+    <a href="#!"class="collection-item active">Champagne</a>
+  </div>
+</div>
+```
+
 ##### `WineList`
 
+The `<WineList />` component display a list of wine for the selected region. The contract of the `<WineList />` component is the following
+
+```javascript
+import React from 'react';
+
+export const WineList = React.createClass({
+  propTypes: {
+    onSelectWine: PropTypes.func,
+    wines: PropTypes.array, // an array of wine object
+    wine: PropTypes.object // the selected wine
+  },
+  ...
+});
+```
+
+the view of `<WineList />` component will look something like
+
+```html
+<div class="col s12 m6 l3">
+  <h2 class="center-align">Wines</h2>
+  <div class="collection">
+    <a href="#!" class="collection-item">Wine 1</a>
+    <a href="#!" class="collection-item active">Wine 2</a>
+    <a href="#!" class="collection-item">Wine 3</a>
+  </div>
+</div>
+```
+
 ##### `Wine`
+
+The `<Wine />` component display a list of wine for the selected region. The contract of the `<Wine />` component is the following
+
+```javascript
+import React from 'react';
+
+export const Wine = React.createClass({
+  propTypes: {
+    wine: PropTypes.object, // the wine object
+  },
+  ...
+});
+```
+
+the view of `<Wine />` component will look something like
+
+```html
+<div class="col s12 m12 l6">
+  <h2 class="center-align">Wine details</h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img class="responsive-img wine-detail-image" alt="Wine bottle pic" src="https://wines-api.herokuapp.com/api/wines/wine1/image" />
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h3>Name of the Wine</h3>
+        <br/>
+        <p><b>Appellation:</b> Wine appelation name</p>
+        <p><b>Region:</b> Wine appelation region</p>
+        <p><b>Color:</b> Wine type</p>
+        <p><b>Grapes:</b> Wine grape 1, Wine grape 2</p>
+      </div>
+      <div class="card-action"></div>
+    </div>
+  </div>
+</div>
+```
