@@ -21,7 +21,7 @@ Before you start coding, there are few questions to ask:
 
 * Which are the components of the app and what is the hierarchy between components?
 * What is the data managed by each component? Should I manage the data with `props` or with `state`?
-* Ho do my components communicate? Which events should I manage?
+* How do my components interact? Which events should I manage?
 * Once I'm ready, how to start coding the app?
 
 ## Component hierarchy
@@ -57,8 +57,29 @@ Feel free to read this [great post about Smart and Dumb components](https://medi
 
 In our React application, `Regions`, `WineList` and `Wine` are Dumb Components (presentational stuff only),they only use their `props`. `WineApp` is a Dumb Component, aka the container that will make the Dumb Components work together. It uses its `state`.
 
-## Communication between components
+## Interaction between components
 
+Interaction between components are:
 
+* A click on a wine region loads the wines of the region (in the middle column) and the details of the first wine of the region (in the right column).
+* A click on a wine loads the detail of the wine (int the right column).
 
 ## How to start coding?
+
+A good way to start building a React application is:
+
+* Build a static version of the app by creating each component identified in the step "Thinking React"
+* Define an initial state for each *Smart Component* and use this state in component rendering.
+* Manage events so that the app become interactive.
+
+### Static version of the app
+
+#### Dumb components
+
+Create all *Dumb Components*: `Regions`, `WineList` and `Wine` and implement the `render()` method for each one, based on the component `props`.
+
+##### `Regions`
+
+##### `WineList`
+
+##### `Wine`
