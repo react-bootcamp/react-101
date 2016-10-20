@@ -129,6 +129,8 @@ export const MyComponent = React.createClass({
     };
   },
   componentDidMount() {
+    // it's always a good thing to load data when the component is already monted into the DOM
+    // event if it's not http related
     fetch('https://freegeoip.net/json/')
       .then(r => r.json())
       .then(location => this.setState({ location }));

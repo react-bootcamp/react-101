@@ -227,3 +227,54 @@ Then use the `state` in the `render()` method:
 ```
 
 Tip: you can move the fake data used previously to the initial state of the component.
+
+## Handling user events
+
+the last step here is to handle event so the app will become alive.
+
+In our `<WineApp />` only the dumb components will capture the user events. But they will not actually handle them, they will delegate the processing to the parent component throught a function passed as props.
+
+For example, for the `<Region />` component, we need to do something when the user click on a region. To do that we can write something like the following code :
+
+```javascript
+import React from 'react';
+
+const Regions = React.createClass({
+  onSelectRegion(region) {
+    this.props.onSelectRegion(region);
+  },
+  render () {
+    return (
+      <div>
+        {
+          this.props.regions.map(region =>
+            <div key={region} onClick={e => this.onSelectRegion(region)}>
+              {region}
+            </div>
+          )
+        }
+      </div>
+    )
+  }
+})
+```
+
+And in the parent component, the `<WineApp />` component
+
+```javascript
+import React from 'react';
+
+const WineApp = React.createClass({
+  onSelectRegion(region) {
+    this.setState({ selectedRegion: region });
+    // TODO : maybe we need to reload wines here ???
+  },
+  render() {
+    return (
+      ...
+      <Regions regions={this.state.regions} region={this.state.selectedRegion} onSelectRegion={this.onSelectRegion} />
+      ...
+    );
+  }
+})
+```
