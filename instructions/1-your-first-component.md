@@ -6,7 +6,7 @@ Now that your server is running with a blank React app, we can start to work
 
 There are several ways to define a React component. Each React component will be defined as a `class` that you will be able to instanciate in your views.
 
-**WARNING**: the first letter of the name of a React component should always be Uppercase.
+**WARNING**: the first letter of the name of a React component should always be **Uppercase**.
 
 ## `React.createClass`
 
@@ -128,6 +128,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MyComponent } from './MyComponent';
 
+//                          the props is passed here
+//                                    |||
+//                           vvvvvvvvvvvvvvvvvvvvvv  
 ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById('app'));
 ```
 

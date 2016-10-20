@@ -6,9 +6,9 @@ For this step you'll need to fetch some data to feed your app. You will you the 
 
 The URL you need are the following
 
-* `https://wines-api.herokuapp.com/api/regions` => returns an array of regions (string)
-* `https://wines-api.herokuapp.com/api/wines?region=:region` => returns an array of wines
-* `https://wines-api.herokuapp.com/api/wines/:id` => returns a wine
+* `GET https://wines-api.herokuapp.com/api/regions` => returns an array of regions (string)
+* `GET https://wines-api.herokuapp.com/api/wines?region=:region` => returns an array of wines
+* `GET https://wines-api.herokuapp.com/api/wines/:id` => returns a wine
 
 The HTTP client you will use is `fetch`. It's the new standard way to fetch data over http in the browser. Here we use the `whatwg-fetch` npm module to polyfill `fetch` if necessary.
 
