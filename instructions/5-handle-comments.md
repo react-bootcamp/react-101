@@ -38,7 +38,7 @@ The  `<CommentList />` will be added in the `card-action` section.
 
 And now your wine details component should look something like that
 
-<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/comment.png' width='800' alt='The comments section'>
+<img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/comments.png' width='800' alt='The comments section'>
 
 # What's next
 
