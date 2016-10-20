@@ -183,12 +183,47 @@ the view of `<Wine />` component will look something like
 The `<WineApp />` component should look like this:
 
 ```html
-<div className="container">
-  <h1 className="center-align">Open Wine Database</h1>
-  <div className="row">
+<div class="container">
+  <h1 class="center-align">Open Wine Database</h1>
+  <div class="row">
     <Regions ... />
     <WineList ... />
     <Wine ... />
   </div>
 </div>
 ```
+
+Tip: use some fake data for the *Dumb Components* `props`, for example:
+
+```javascript
+<Regions regions={["Bordeaux", "Bourgogne"]} />
+```
+
+The last thing: don't forget to mount the `<WineApp />` component into the DOM (do this stuff in the `index.html` file), otherwise you'll have a beautiful blank page :-)
+
+### Initial state
+
+Now it's time to define the `state` of the `<WineApp />` container. The first thing to do is to implement the `getInitialState()` method:
+
+```javascript
+export const WineApp = React.createClass({
+  getInitialState() {
+    return {
+      regions: [],
+      selectedRegion: null,
+      wines: [],
+      selectedWine: null,
+    };
+  },
+  // ...
+```
+
+Then use the `state` in the `render()` method:
+
+```javascript
+...
+<Regions regions={this.state.regions} />
+...
+```
+
+Tip: you can move the fake data used previously to the initial state of the component.
