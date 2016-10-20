@@ -15,8 +15,6 @@ Obviously, you'll need to add the following functions to the module responsible 
 ```javascript
 export function fetchComments(id) {
   ...
-  ...
-  ...
 }
 ```
 
@@ -80,7 +78,7 @@ the view of `<Comment />` will look something like
 
 ## What it should look like
 
-And now your wine details component should look something like that
+And now your wine details component should look something like that (without the blue and red outline of course)
 
 <img src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/comments.png' width='800' alt='The comments section'>
 
