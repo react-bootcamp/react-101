@@ -278,3 +278,7 @@ const WineApp = React.createClass({
   }
 })
 ```
+
+## What's next
+
+Now you're ready to use real data from the wine API. Go to the [next step](./3-connect-with-the-wine-api.md) to start writing it.
