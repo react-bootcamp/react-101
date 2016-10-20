@@ -84,4 +84,4 @@ And now your wine details component should look something like that (without the
 
 # What's next
 
-Now you're ready to add third party JS lib to the Wine application. Go to the [next step](./6-6-integrate-with-third-party-apis.md) to start writing it.
+Now you're ready to add third party JS lib to the Wine application. Go to the [next step](./6-integrate-with-third-party-apis.md) to start writing it.
