@@ -55,7 +55,7 @@ Because the component `props` are immutable and the component `state` is mutable
 
 Feel free to read this [great post about Smart and Dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.a0czhe4g8).
 
-In our React application, `<Regions />`, `<WineList />` and `<Wine />` are Dumb Components (presentational stuff only),they only use their `props`. `<WineApp />` is a Dumb Component, aka the container that will make the Dumb Components work together. It uses its `state`.
+In our React application, `<Regions />`, `<WineList />` and `<Wine />` are Dumb Components (presentational stuff only),they only use their `props`. `<WineApp />` is a Smart Component, aka the container that will make the Dumb Components work together. It uses its `state`.
 
 ## Interaction between components
 
