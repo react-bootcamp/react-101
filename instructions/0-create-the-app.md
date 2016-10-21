@@ -130,6 +130,8 @@ if you look at the `package.json` file you can see something like that
   },
   "dependencies": {          // all the libs used at runtime by your application
     "es6-shim": "^0.35.1",   // polyfill everything we need to use ES6
+    "react": "^15.3.2",      // the react core lib
+    "react-dom": "^15.3.2",  // the react dom lib
     "whatwg-fetch": "^1.0.0" // a polyfill for the fetch lib
   },
   "scripts": {               // a bunch a scripts to run your app, build it and test it
