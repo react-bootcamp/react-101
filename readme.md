@@ -109,7 +109,7 @@ yarn global add create-react-app
 
 The app uses a REST API as a data source to display wines by regions, with their details, a photo of the bottle, etc ... This API is actually a small server written with NodeJS / Express, data are stored in memory.
 
-You can use the online version of the API deployed on Heroku. You can find the documentation of the API [here](https://wines-api.herokuapp.com/) or even [here](http://petstore.swagger.io/?url=https://react-bootcamp.github.io/react-wines/swagger.json). You can also use a graphql version of the API available [here](https://wines-api-graphql.herokuapp.com/graphql). We recommend that you read at least once on this documentation to get an overall idea of ​​the data provided by the API to power your application.
+You can use the online version of the API deployed on Heroku. You can find the documentation of the API [here](https://bit.ly/rbw-api) or even [here](https://bit.ly/rbw-api-swag). You can also use a graphql version of the API available [here](https://bit.ly/rbw-graphql). We recommend that you read at least once on this documentation to get an overall idea of ​​the data provided by the API to power your application.
 
 If you don't want to/can't use the online version of the API, and want to run it on your machine, just use the following commands
 
