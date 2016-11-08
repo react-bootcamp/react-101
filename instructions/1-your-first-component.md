@@ -96,7 +96,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MyComponent } from './MyComponent';
 
-ReactDOM.render(<MyComponent />, document.getElementById('app'));
+ReactDOM.render(<MyComponent />, document.getElementById('root'));
 ```
 
 ## Pass data to the component
@@ -131,7 +131,7 @@ import { MyComponent } from './MyComponent';
 //                          the props is passed here
 //                                    |||
 //                           vvvvvvvvvvvvvvvvvvvvvv  
-ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById('app'));
+ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById('root'));
 ```
 
 In that case, the displayed message will be `Hello World!`
@@ -208,7 +208,7 @@ ReactDOM.render(
   <MyComponent message="Hello World!">
     <p>Still a very useful component</p>
   </MyComponent>
-  , document.getElementById('app')
+  , document.getElementById('root')
 );
 ```
 
@@ -353,7 +353,7 @@ import { Wine } from './Wine';
 const wine = { name: 'Château Chevrol Bel Air' };
 
 ReactDOM.render(
-  <Wine wine={wine}/>, document.getElementById('app')
+  <Wine wine={wine}/>, document.getElementById('root')
 );
 ```
 
