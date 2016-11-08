@@ -144,7 +144,7 @@ import React from 'react';
 export const MyComponent = React.createClass({
   getDefaultProps() {
     return {
-      message: 'I am a very useful component';
+      message: 'I am a very useful component'
     };
   },
   render() {
