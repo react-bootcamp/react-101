@@ -326,7 +326,7 @@ export const Wine = React.createClass({
     return {
       wine: {
         name: 'Some Wine'
-      };
+      }
     };
   },
   render() {
