@@ -236,7 +236,7 @@ export const Counter = React.createClass({
     return (
       <div>
         <h2>Count: {this.state.count}</h2>
-        <button type="button" onClick={this.incrementCounter}>increment</button>
+        <button type="button" onClick={() => this.incrementCounter()}>increment</button>
       </div>
     );
   }
@@ -265,7 +265,7 @@ export class Counter extends Component {
     return (
       <div>
         <h2>Count: {this.state.count}</h2>
-        <button type="button" onClick={this.incrementCounter}>increment</button>
+        <button type="button" onClick={() => this.incrementCounter()}>increment</button>
       </div>
     );
   }
