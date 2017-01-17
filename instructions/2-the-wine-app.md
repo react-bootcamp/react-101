@@ -245,12 +245,13 @@ const Regions = React.createClass({
   },
   render () {
     return (
+      <div className="collection">
       <div>
         {
           this.props.regions.map(region =>
-            <div key={region} onClick={e => this.onSelectRegion(region)}>
+            <a href="#" className="collection-item" key={region} onClick={e => this.onSelectRegion(region)}>
               {region}
-            </div>
+            </a>
           )
         }
       </div>
@@ -281,6 +282,8 @@ const WineApp = React.createClass({
   }
 })
 ```
+
+Now you can do the same for the `<WineList />` component to show the actual wine you've selected.
 
 ## What's next
 
