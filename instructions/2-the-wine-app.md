@@ -89,7 +89,7 @@ export const Regions = React.createClass({
   propTypes: {
     onSelectRegion: PropTypes.func,
     regions: PropTypes.array, // an array of string
-    region: PropTypes.object // the selected region
+    region: PropTypes.string // the selected region
   },
   ...
 });
