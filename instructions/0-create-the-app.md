@@ -21,8 +21,8 @@ to create an app with `create-react-app`, just run the following command
 ```sh
 create-react-app my-app
 # install polyfill dependencies
-npm install --save es6-shim whatwg-fetch
 cd my-app
+npm install --save es6-shim whatwg-fetch
 ```
 
 ### Run the app
