@@ -234,7 +234,7 @@ the last step here is to handle event so the app will become alive.
 
 In our `<WineApp />` only the dumb components will capture the user events. But they will not actually handle them, they will delegate the processing to the parent component throught a function passed as props.
 
-For example, for the `<Region />` component, we need to do something when the user click on a region. To do that we can write something like the following code :
+For example, for the `<Regions />` component, we need to do something when the user click on a region. To do that we can write something like the following code :
 
 ```javascript
 import React from 'react';
@@ -246,7 +246,6 @@ const Regions = React.createClass({
   render () {
     return (
       <div className="collection">
-      <div>
         {
           this.props.regions.map(region =>
             <a href="#" className="collection-item" key={region} onClick={e => this.onSelectRegion(region)}>
