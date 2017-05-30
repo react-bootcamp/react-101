@@ -23,19 +23,19 @@ export function fetchComments(id) {
 The  `<CommentList />` will be added in the `card-action` section and will have the following contract
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const CommentList = React.createClass({
-  propTypes: {
+export class CommentList extends Component {
+
+  static propTypes = {
     wine: PropTypes.object
-  },
-  getInitialState() {
-    return {
-      comments: []
-    };
-  },
+  };
+
+  state = {
+    comments: []
+  };
   ...
-});
+}
 ```
 
 the view of `<CommentList />` will look something like
@@ -57,12 +57,12 @@ We can see that the comment list will use another component to display each comm
 The `<Comment />` component will have the following contract
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const Comment = React.createClass({
-  propTypes: {
+export class Comment extends Component {
+  static propTypes = {
     comment: PropTypes.object
-  },
+  };
   ...
 });
 ```

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import { Loader } from './components';
 import './App.css';
 
-export const App = React.createClass({
+export class App extends Component {
   render() {
     return (
       <div className="App">
@@ -18,4 +18,4 @@ export const App = React.createClass({
       </div>
     );
   }
-});
+}

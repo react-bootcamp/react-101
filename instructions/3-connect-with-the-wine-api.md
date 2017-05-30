@@ -28,17 +28,17 @@ As explained in the previous step, here we will make heavy usage of the unidirec
 One of the issue with that pattern is that children components will need to trigger state mutation in the root component. To do that, just pass state mutation function to the children component as props in depth.
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = React.createClass({
-  getInitialState() {
-    return {    // the state of the app
-      count: 0
-    };
-  },
-  incrementCounter() { // the state mutator function
+class App extends Component {
+  state = {    // the state of the app
+    count: 0
+  };
+
+  incrementCounter = () => { // the state mutator function
     this.setState({ count: this.state.count + 1 });
-  },
+  };
+
   render() {
     return (
       <div>
@@ -49,15 +49,15 @@ const App = React.createClass({
       </div>
     );
   }
-});
+}
 
-const IncrementButton = React.createClass({
+class IncrementButton extends Component {
   render() {
     return (
       <button type="button" onClick={this.props.incrementCounter}>{this.props.count} + 1</button>
     );
   }
-});
+}
 ```
 
 ## How to start
@@ -83,28 +83,30 @@ then, add new functions on the `<WineApp />` component to call that module and m
 ```javascript
 import * as WinesService from '../services/wines';
 
-export const WineApp = React.createClass({
-  getInitialState() {
-    return {
-      regions: [],
-      selectedRegion: null,
-      wines: [],
-      selectedWine: null,
-    };
-  },
+export class WineApp extends Component {
+  state = {
+    regions: [],
+    selectedRegion: null,
+    wines: [],
+    selectedWine: null,
+  };
+
   componentDidMount() {
     // load regions and maybe wines from the first region
-  },
-  onSelectRegion(region) {
+  }
+
+  onSelectRegion = (region) => {
     // load wines from the selected region
-  },
-  onSelectWine(id) {
+  };
+
+  onSelectWine = (id) => {
     // load wine details from wine id
-  },
+  };
+
   render() {
     ...
   }
-});
+}
 ```
 
 now, just pass the data from the state and useful functions to the child components, add the right event listeners on elements, and it should be good.

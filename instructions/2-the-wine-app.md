@@ -83,14 +83,14 @@ Create all *Dumb Components*: `<Regions />`, `<WineList />` and `<Wine />` and i
 The `<Regions />` component just display a list of regions. The contract of the `<Regions />` component is the following
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const Regions = React.createClass({
-  propTypes: {
+export class Regions extends Component {
+  static propTypes = {
     onSelectRegion: PropTypes.func,
     regions: PropTypes.array, // an array of string
-    region: PropTypes.string // the selected region
-  },
+    region: PropTypes.object // the selected region
+  };
   ...
 });
 ```
@@ -114,12 +114,12 @@ The `<WineList />` component display a list of wine for the selected region. The
 ```javascript
 import React from 'react';
 
-export const WineList = React.createClass({
-  propTypes: {
+export class WineList extends Component {
+  static propTypes = {
     onSelectWine: PropTypes.func,
     wines: PropTypes.array, // an array of wine object
     wine: PropTypes.object // the selected wine
-  },
+  };
   ...
 });
 ```
@@ -142,14 +142,16 @@ the view of `<WineList />` component will look something like
 The `<Wine />` component display a list of wine for the selected region. The contract of the `<Wine />` component is the following
 
 ```javascript
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const Wine = React.createClass({
-  propTypes: {
+export class Wine extends Component {
+
+  static propTypes = {
     wine: PropTypes.object, // the wine object
-  },
+  };
+
   ...
-});
+}
 ```
 
 the view of `<Wine />` component will look something like
@@ -203,18 +205,16 @@ The last thing: don't forget to mount the `<WineApp />` component into the DOM (
 
 ### Initial state
 
-Now it's time to define the `state` of the `<WineApp />` container. The first thing to do is to implement the `getInitialState()` method:
+Now it's time to define the `state` of the `<WineApp />` container.
 
 ```javascript
-export const WineApp = React.createClass({
-  getInitialState() {
-    return {
-      regions: [],
-      selectedRegion: null,
-      wines: [],
-      selectedWine: null,
-    };
-  },
+export class WineApp extends Component {
+  state = {
+    regions: [],
+    selectedRegion: null,
+    wines: [],
+    selectedWine: null,
+  };
   // ...
 ```
 
@@ -237,12 +237,14 @@ In our `<WineApp />` only the dumb components will capture the user events. But 
 For example, for the `<Regions />` component, we need to do something when the user click on a region. To do that we can write something like the following code :
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-const Regions = React.createClass({
-  onSelectRegion(region) {
+class Regions extends Component {
+
+  onSelectRegion = (region) => {
     this.props.onSelectRegion(region);
-  },
+  };
+
   render () {
     return (
       <div className="collection">
@@ -256,19 +258,21 @@ const Regions = React.createClass({
       </div>
     )
   }
-})
+}
 ```
 
 And in the parent component, the `<WineApp />` component
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-const WineApp = React.createClass({
-  onSelectRegion(region) {
+class WineApp extends Component {
+
+  onSelectRegion = (region) => {
     this.setState({ selectedRegion: region });
     // TODO : maybe we need to reload wines here ???
-  },
+  };
+
   render() {
     return (
       ...
@@ -279,7 +283,7 @@ const WineApp = React.createClass({
       ...
     );
   }
-})
+}
 ```
 
 Now you can do the same for the `<WineList />` component to show the actual wine you've selected.

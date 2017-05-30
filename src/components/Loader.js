@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export const Loader = React.createClass({
-  getInitialState() {
-    return {
-      bigDot: 0
-    };
-  },
-  next() {
+export class Loader extends Component {
+
+  state = {
+    bigDot: 0
+  };
+
+  next = () => {
     if (!this.mounted) {
       return;
     }
@@ -19,15 +19,18 @@ export const Loader = React.createClass({
         this.timeout = setTimeout(this.next, 200);
       });
     }
-  },
+  }
+
   componentDidMount() {
     this.mounted = true;
     this.timeout = setTimeout(this.next, 0);
-  },
+  }
+
   componentWillUnmount() {
     this.mounted = false;
     clearTimeout(this.timeout);
-  },
+  }
+
   render() {
     return (
       <div style={{ color: 'black' }}>
@@ -37,4 +40,4 @@ export const Loader = React.createClass({
       </div>
     );
   }
-});
+}

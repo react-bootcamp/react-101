@@ -32,14 +32,14 @@ the comment button is a very simple component, its only job is to trigger the `<
 The contract of `<CommentButton />` is the following
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const CommentButton = React.createClass({
-  propTypes: {
+export class CommentButton extends Component {
+  static propTypes = {
     openCommentModal: PropTypes.func
-  },
+  };
   ...
-});
+}
 ```
 
 the view of `<CommentButton />` component will look something like
@@ -59,23 +59,26 @@ The only issue is that the [materialize css modal component](http://materializec
 The contract of `<CommentModal />` is the following
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const CommentModal = React.createClass({
-  propTypes: {
+export class CommentModal extends Component {
+
+  static propTypes = {
     isOpen: PropTypes.boolean
-  },
-  getInitialState() {
-    return {
-      comment: ''
-    };
-  },
+  };
+
+  state = {
+    comment: ''
+  };
+
   componentDidMount() {
     // if this.props.isOpen then open the modal on mount
-  },
+  }
+
   componentWillUnmount() {
     // close the modal
-  },
+  }
+
   componentWillReceiveProps(nextProps) {
     // if nextProps.isOpen !== this.props.isOpen, open or close modal according to the new value
   }
@@ -118,9 +121,9 @@ to use this code inside a our React component, we need to get a reference to the
 To do that we are going to use React refs
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const CommentModal = React.createClass({
+export class CommentModal extends Component {
   ...
   render() {
     // here we set the value of this.modalNode to the actual ref to the DOM node
@@ -146,7 +149,7 @@ export const CommentModal = React.createClass({
       </div>
     );
   }
-});
+}
 ```
 
 using the ref trick, you can now access `this.modalNode` inside your code, so you can use code like

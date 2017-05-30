@@ -10,7 +10,7 @@ There are several ways to define a React component. Each React component will be
 
 ## `React.createClass`
 
-The first way to define a React component is the ancient way using `React.createClass`
+The first way to define a React component is the "ancient" way using `React.createClass`, we will not use `React.createClass` in this workshop.
 
 ```javascript
 import React from 'react';
@@ -70,6 +70,8 @@ export class MyComponent extends Component {
   }
 }
 ```
+
+It's the new official way to define stateful components, therefore, it will be used everywhere in the workshop.
 
 ## Functional component
 
@@ -136,17 +138,17 @@ ReactDOM.render(<MyComponent message="Hello World!" />, document.getElementById(
 
 In that case, the displayed message will be `Hello World!`
 
-You can provide default values for `props` using `getDefaultProps`
+You can provide default values for `props` using static property `defaultProps`
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-export const MyComponent = React.createClass({
-  getDefaultProps() {
-    return {
-      message: 'I am a very useful component'
-    };
-  },
+export class MyComponent extends Component {
+
+  static defaultProps = {
+    message: 'I am a very useful component';
+  };
+
   render() {
     return (
       <div className="my-component">
@@ -154,23 +156,24 @@ export const MyComponent = React.createClass({
       </div>
     );
   }
-});
+}
 ```
 
 You can provide some validation for the `props` of a component using `React.PropTypes` to have error message in developement. it's quite useful when you provide components to other dev teams.
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component PropTypes } from 'react';
 
-export const MyComponent = React.createClass({
-  propTypes: {
+export class MyComponent extends Component {
+
+  static propTypes = {
     message: PropTypes.string
-  },
-  getDefaultProps() {
-    return {
-      message: 'I am a very useful component'
-    };
-  },
+  };
+
+  static defaultProps = {
+    message: 'I am a very useful component';
+  };
+
   render() {
     return (
       <div className="my-component">
@@ -218,48 +221,18 @@ in that case, the displayed message will be `Hello World!` and `this.props.child
 
 If components `props` are not enought for your need, you can use the component `state`. The state is specific value for each component instance. Each time the value of the state is changed using `this.setState(...)`, this will trigger a full redraw of the component. Let's write a counter component
 
-Using `React.createClass`
-
 ```javascript
 import React from 'react';
 
-export const Counter = React.createClass({
-  getInitialState() { // if you don't define getInitialState, your state will be null
-    return {
-      count: 0
-    };
-  },
-  incrementCounter() {
-    this.setState({ count: this.state.count + 1 }); // trigger a component redraw
-  },
-  render() {
-    return (
-      <div>
-        <h2>Count: {this.state.count}</h2>
-        <button type="button" onClick={this.incrementCounter}>increment</button>
-      </div>
-    );
-  }
-});
-```
-
-Using ES6 class
-
-```javascript
-import React, { Component } from 'react';
-
 export class Counter extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+  state = { // if you don't define an initial state, your state will be null
+    count: 0
+  };
 
-  incrementCounter() {
-    this.setState({ count: this.state.count + 1 });  // trigger a component redraw
-  }
+  incrementCounter = () => {
+    this.setState({ count: this.state.count + 1 }); // trigger a component redraw
+  };
 
   render() {
     return (
@@ -272,30 +245,33 @@ export class Counter extends Component {
 }
 ```
 
-you can implement the counter as a functional component because functional component don't have a state.
+you can't implement the counter as a functional component because functional component don't have a state.
 
 ## Store data inside the component using the component instance
 
 If your when to store something technical in a component instance without triggering a redraw of the component, you can just store whatever you want on `this`
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-export const Clock = React.createClass({
-  getInitialState() { // if you don't define getInitialState, your state will be null
-    return {
-      time: Date.now()
-    };
-  },
-  update() {
+export class Clock extends Component {
+
+  state = { // if you don't define an initial state, your state will be null
+    time: Date.now()
+  };
+
+  update = () => {
     this.setState({ time: Date.now() });
-  },
+  };
+
   componentDidMount() { // will be called when component is mounted in the DOM
     this.interval = setInterval(this.update, 1000); // here we store the interval id on the component instance
-  },
+  }
+
   componentWillUnmount() { // will be called when component is removed from the DOM
     clearInterval(this.interval);
-  },
+  }
+
   render() {
     return (
       <div>
@@ -304,7 +280,7 @@ export const Clock = React.createClass({
       </div>
     );
   }
-});
+}
 ```
 
 # It's time to write a Wine component
@@ -314,21 +290,22 @@ Let's write a nice component that will display details of a wine. This wine will
 First let's just display it's name
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export const Wine = React.createClass({
-  propTypes: {
+export class Wine extends Component {
+
+  static propTypes = {
     wine: PropTypes.shape({
       name: PropTypes.string
     })
-  },
-  getDefaultProps() {
-    return {
-      wine: {
-        name: 'Some Wine'
-      }
+  };
+
+  static defaultProps = {
+    wine: {
+      name: 'Some Wine'
     };
-  },
+  };
+
   render() {
     return (
       <div className="card horizontal">   
@@ -340,7 +317,7 @@ export const Wine = React.createClass({
       </div>
     );
   }
-});
+}
 ```
 
 to mount it just write something like
@@ -424,10 +401,12 @@ to achieve that, you will create a new component called `<LikeButton />` with th
 ```javascript
 import React, { PropTypes } from 'react';
 
-export const LikeButton = React.createClass({
-  propTypes: {
+export class LikeButton extends Component {
+
+  static propTypes = {
     startCounterAt: PropTypes.number
-  },
+  };
+
   ...
 });
 ```

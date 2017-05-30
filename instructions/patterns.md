@@ -36,16 +36,17 @@ Using webpack, it's pretty easy to inject CSS parts inside a javascript file
 ```
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 import './MyComponent.css';  // inject css (using webpack)
 
-export const MyComponent = React.createClass({
+export class MyComponent extends Component {
+  
   render() {
     return (
       <div className="MyComponent-root-style">...</div>
     );
   }
-})
+}
 ```
 
 ### Style a component with inline styling
@@ -53,7 +54,7 @@ export const MyComponent = React.createClass({
 React let you write inline style pretty easily
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
 const Styles = {
   myComponent: {
@@ -65,13 +66,13 @@ const Styles = {
   ...
 };
 
-export const MyComponent = React.createClass({
+export class MyComponent extends Component {
   render() {
     return (
       <div style={Styles.myComponent}>...</div>
     );
   }
-})
+}
 ```
 
 ## Conditional display of components
@@ -79,7 +80,8 @@ export const MyComponent = React.createClass({
 if you want to display component conditionaly, you can use truthy/falsy trick
 
 ```javascript
-export const MyComponent = React.createClass({
+export class MyComponent extends Component {
+
   render() {
     return (
       <div>
@@ -92,7 +94,7 @@ export const MyComponent = React.createClass({
       </div>
     );
   }
-})
+}
 ```
 
 ## Add props on `this.props.children`
@@ -101,9 +103,10 @@ sometimes you want to write a component that will render its children, but you'd
 It's quite useful with `react-router` for instance. To do that your can use `React.cloneElement`
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-export const MyComponent = React.createClass({
+export class MyComponent extends Component {
+
   render() {
     return (
       <div>
@@ -114,7 +117,7 @@ export const MyComponent = React.createClass({
       </div>
     );
   }
-})
+}
 ```
 
 ## Loading data from an HTTP services
@@ -122,19 +125,20 @@ export const MyComponent = React.createClass({
 If you want to fetch some data when a component is mounted to the dom, use the lifecycle function `componentDidMount`
 
 ```javascript
-export const MyComponent = React.createClass({
-  getInitialState() {
-    return {
-      location: null
-    };
-  },
+export class MyComponent extends Component {
+
+  state = {
+    location: null
+  };
+
   componentDidMount() {
     // it's always a good thing to load data when the component is already monted into the DOM
     // event if it's not http related
     fetch('https://freegeoip.net/json/')
       .then(r => r.json())
       .then(location => this.setState({ location }));
-  },
+  }
+
   render() {
     return (
       <div>
@@ -153,23 +157,25 @@ export const MyComponent = React.createClass({
 ## Binding a text input
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
-const MyComponent = React.createClass({
-  getInitialState() {
-    return {
-      content: ''
-    };
-  },
-  onChange(e) {
+export class MyComponent extends Component {
+
+  state = {
+    content: ''
+  };
+
+  onChange = (e) => {
     this.setState({ content: e.target.value });
-  },
-  sendContent() {
+  };
+
+  sendContent = () => {
     const content = this.state.content;
     this.setState({ content: '' }, () => {
       // do whatever you want with content
     });
-  },
+  };
+
   render() {
     return (
       <div>
@@ -178,4 +184,5 @@ const MyComponent = React.createClass({
       </div>
     );
   }
+}
 ```
