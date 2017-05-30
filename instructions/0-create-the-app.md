@@ -126,13 +126,13 @@ if you look at the `package.json` file you can see something like that
   "version": "1.0.0",        // its version using semver
   "private": true,           // yes its a private project
   "devDependencies": {       // all the tools to buidl and run your project
-    "react-scripts": "0.6.1" // a collection of curated tools and libs by facebook
+    "react-scripts": "1.0.7" // a collection of curated tools and libs by facebook
   },
   "dependencies": {          // all the libs used at runtime by your application
-    "es6-shim": "^0.35.1",   // polyfill everything we need to use ES6
-    "react": "^15.3.2",      // the react core lib
-    "react-dom": "^15.3.2",  // the react dom lib
-    "whatwg-fetch": "^1.0.0" // a polyfill for the fetch lib
+    "es6-shim": "0.35.3",    // polyfill everything we need to use ES6
+    "react": "15.5.4",       // the react core lib
+    "react-dom": "15.5.4",   // the react dom lib
+    "whatwg-fetch": "2.0.3"  // a polyfill for the fetch lib
   },
   "scripts": {               // a bunch a scripts to run your app, build it and test it
     "start": "react-scripts start",
