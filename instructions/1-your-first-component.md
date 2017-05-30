@@ -10,7 +10,7 @@ There are several ways to define a React component. Each React component will be
 
 ## `React.createClass`
 
-The first way to define a React component is the "ancient" way using `React.createClass`, we will not use `React.createClass` in this workshop.
+The first way to define a React component is the "ancient" way using `React.createClass`, **we will not use** `React.createClass` in this workshop.
 
 ```javascript
 import React from 'react';
@@ -71,7 +71,7 @@ export class MyComponent extends Component {
 }
 ```
 
-It's the new official way to define stateful components, therefore, it will be used everywhere in the workshop.
+It's the new official way to define stateful components, therefore, **it will be used everywhere in the workshop**.
 
 ## Functional component
 
