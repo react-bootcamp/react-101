@@ -162,7 +162,7 @@ export class MyComponent extends Component {
 You can provide some validation for the `props` of a component using `React.PropTypes` to have error message in developement. it's quite useful when you provide components to other dev teams.
 
 ```javascript
-import React, { Component PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export class MyComponent extends Component {
 
@@ -222,7 +222,7 @@ in that case, the displayed message will be `Hello World!` and `this.props.child
 If components `props` are not enought for your need, you can use the component `state`. The state is specific value for each component instance. Each time the value of the state is changed using `this.setState(...)`, this will trigger a full redraw of the component. Let's write a counter component
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
 export class Counter extends Component {
 
@@ -399,7 +399,7 @@ Let say the `<Wine />` component should now look like
 to achieve that, you will create a new component called `<LikeButton />` with the following contract
 
 ```javascript
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export class LikeButton extends Component {
 
@@ -408,7 +408,7 @@ export class LikeButton extends Component {
   };
 
   ...
-});
+}
 ```
 
 the `<LikeButton />` component will have a state to hold the number of likes for the button and a click listener to increment the like counter.
