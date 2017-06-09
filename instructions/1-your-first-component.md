@@ -303,7 +303,7 @@ export class Wine extends Component {
   static defaultProps = {
     wine: {
       name: 'Some Wine'
-    };
+    }
   };
 
   render() {
@@ -361,8 +361,8 @@ and we want the component to look like the following HTML snippet
     <div class="card-content">
       <h3>Wine name</h3>
       <br/>
-      <p><b>Appellation:</b> Wine appelation name</p>
-      <p><b>Region:</b> Wine appelation region</p>
+      <p><b>Appellation:</b> Wine appellation name</p>
+      <p><b>Region:</b> Wine appellation region</p>
       <p><b>Color:</b> Wine type</p>
       <p><b>Grapes:</b> Wine grape 1, Wine grape 2</p>
     </div>
@@ -382,8 +382,8 @@ Let say the `<Wine />` component should now look like
     <div class="card-content">
       <h3>Wine name</h3>
       <br/>
-      <p><b>Appellation:</b> Wine appelation name</p>
-      <p><b>Region:</b> Wine appelation region</p>
+      <p><b>Appellation:</b> Wine appellation name</p>
+      <p><b>Region:</b> Wine appellation region</p>
       <p><b>Color:</b> Wine type</p>
       <p><b>Grapes:</b> Wine grape 1, Wine grape 2</p>
     </div>
