@@ -171,7 +171,7 @@ export class MyComponent extends Component {
   };
 
   static defaultProps = {
-    message: 'I am a very useful component';
+    message: 'I am a very useful component'
   };
 
   render() {
