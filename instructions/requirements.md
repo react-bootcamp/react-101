@@ -7,6 +7,9 @@ Les gens vont avoir besoin de
 * Node (voir https://github.com/react-bootcamp/react-101#node)
   * au moins en version 5.x avec npm au moins en version 3.x
   * dispo sur https://nodejs.org/en/download/
+  * NVM est super pratique https://github.com/creationix/nvm
+* Yarn 
+  * https://yarnpkg.com/lang/en/
 * Git (voir https://github.com/react-bootcamp/react-101#git)
   * dispo sur https://git-scm.com/downloads
 * Atom (https://github.com/react-bootcamp/react-101#atom)
@@ -23,8 +26,7 @@ ensuite l'idée serait de récupérer quelques librairies par avance pour évite
 ```sh
 git clone https://github.com/react-bootcamp/react-101 react-101
 cd react-101
-npm install
-npm install -g create-react-app
+yarn install
 ```
 
 et au cas ou, récupérer l'api REST utilisée dans le workshop en local (voir https://github.com/react-bootcamp/react-101#open-wine-api)
@@ -32,5 +34,5 @@ et au cas ou, récupérer l'api REST utilisée dans le workshop en local (voir h
 ```sh
 git clone https://github.com/react-bootcamp/wines-api.git wines-api
 cd wines-api
-npm install
+yarn install
 ```

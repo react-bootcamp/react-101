@@ -11,7 +11,7 @@ The workshop uses the `create-react-app` command to create React apps (captain o
 Install it once globally by using the following command
 
 ```sh
-npm install -g create-react-app
+yarn create react-app
 ```
 
 ### Create an app
@@ -22,7 +22,7 @@ to create an app with `create-react-app`, just run the following command
 create-react-app my-app
 # install polyfill dependencies
 cd my-app
-npm install --save es6-shim whatwg-fetch
+yarn add es6-shim whatwg-fetch
 ```
 
 ### Run the app
@@ -30,7 +30,7 @@ npm install --save es6-shim whatwg-fetch
 to run the app just run the following command
 
 ```sh
-npm start
+yarn start
 ```
 
 <img src='https://camo.githubusercontent.com/506a5a0a33aebed2bf0d24d3999af7f582b31808/687474703a2f2f692e696d6775722e636f6d2f616d794e66434e2e706e67' width='600' alt='npm start'>
@@ -51,7 +51,7 @@ and in the browser
 to test your app, just run
 
 ```sh
-npm test
+yarn test
 ```
 
 ### Build a production version of the app
@@ -59,7 +59,7 @@ npm test
 the `npm start` command will launch a development server with a development version of your app with some warnings, some typechecking, etc ... but all those check are not wanted in production. To create a production version of your app, just run
 
 ```sh
-npm run build
+yarn build
 ```
 
 This will create a `dist` directory that will contain everything needed to deploy your app.
@@ -109,7 +109,7 @@ react-101/
 go inside the `react-101` directory and run the following command
 
 ```sh
-npm start
+yarn start
 ```
 
 then open your browser at [http://localhost:3000](http://localhost:3000)
@@ -126,12 +126,12 @@ if you look at the `package.json` file you can see something like that
   "version": "1.0.0",        // its version using semver
   "private": true,           // yes its a private project
   "devDependencies": {       // all the tools to buidl and run your project
-    "react-scripts": "1.0.7" // a collection of curated tools and libs by facebook
+    "react-scripts": "1.0.14" // a collection of curated tools and libs by facebook
   },
   "dependencies": {          // all the libs used at runtime by your application
     "es6-shim": "0.35.3",    // polyfill everything we need to use ES6
-    "react": "15.5.4",       // the react core lib
-    "react-dom": "15.5.4",   // the react dom lib
+    "react": "16.0.0",       // the react core lib
+    "react-dom": "16.0.0",   // the react dom lib
     "whatwg-fetch": "2.0.3"  // a polyfill for the fetch lib
   },
   "scripts": {               // a bunch a scripts to run your app, build it and test it

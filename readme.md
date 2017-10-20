@@ -27,7 +27,9 @@ src='https://github.com/react-bootcamp/react-101/raw/master/instructions/img/win
 
 The technical requirements are the following
 
-* Node (version 5.x or 6.x) with NPM (at least version 3.x)
+* Node (version 7.x or 8.x) with NPM (at least version 3.x)
+  * for more convenience use nvm: https://github.com/creationix/nvm
+* Yarn (https://yarnpkg.com)
 * Git
 * A text editor (if you don't have one, just use Atom)
 * React Developer Tools
@@ -40,10 +42,13 @@ You can verify your current version of `node` and `npm` by running the following
 
 ```sh
 $ node -v
-v6.6.0
+v8.6.0
 
 $ npm -v
-3.10.7
+4.2.0
+
+$yarn -v
+1.2.1
 ```
 
 you can upgrade an existing version of npm by running the following command :
@@ -52,9 +57,7 @@ you can upgrade an existing version of npm by running the following command :
 npm update -g npm
 ```
 
-You’ll need to have Node >= 4 on your machine.
-
-We strongly recommend to use `node` >= 6 and `npm` >= 3 for faster installation speed and better disk usage. You can use `nvm` to easily switch Node versions between different projects.
+We strongly recommend to use `node` >= 7 and `yarn` for faster installation speed and better disk usage. You can use `nvm` to easily switch Node versions between different projects.
 
 ### Git
 
