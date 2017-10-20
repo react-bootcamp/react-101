@@ -8,6 +8,7 @@
   "dependencies": {
     "es-symbol": "1.1.2",
     "es6-shim": "0.35.3",
+    "prettier": "1.7.4",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "whatwg-fetch": "2.0.3"
@@ -16,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write --single-quote --trailing-comma es5 --print-width 100 --tab-width 2 --jsx-bracket-same-line \"src/**/*.js\""
   }
 }

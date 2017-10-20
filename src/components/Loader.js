@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 export class Loader extends Component {
-
   state = {
-    bigDot: 0
+    bigDot: 0,
   };
 
   next = () => {
@@ -19,7 +18,7 @@ export class Loader extends Component {
         this.timeout = setTimeout(this.next, 200);
       });
     }
-  }
+  };
 
   componentDidMount() {
     this.mounted = true;
@@ -34,9 +33,27 @@ export class Loader extends Component {
   render() {
     return (
       <div style={{ color: 'black' }}>
-        <span style={{ fontSize: this.state.bigDot === 0 ? 16 : 12, fontWeight: this.state.bigDot === 0 ? 'bold' : 'normal' }}>{'.'}</span>
-        <span style={{ fontSize: this.state.bigDot === 1 ? 16 : 12, fontWeight: this.state.bigDot === 1 ? 'bold' : 'normal' }}>{'.'}</span>
-        <span style={{ fontSize: this.state.bigDot === 2 ? 16 : 12, fontWeight: this.state.bigDot === 2 ? 'bold' : 'normal' }}>{'.'}</span>
+        <span
+          style={{
+            fontSize: this.state.bigDot === 0 ? 16 : 12,
+            fontWeight: this.state.bigDot === 0 ? 'bold' : 'normal',
+          }}>
+          {'.'}
+        </span>
+        <span
+          style={{
+            fontSize: this.state.bigDot === 1 ? 16 : 12,
+            fontWeight: this.state.bigDot === 1 ? 'bold' : 'normal',
+          }}>
+          {'.'}
+        </span>
+        <span
+          style={{
+            fontSize: this.state.bigDot === 2 ? 16 : 12,
+            fontWeight: this.state.bigDot === 2 ? 'bold' : 'normal',
+          }}>
+          {'.'}
+        </span>
       </div>
     );
   }
