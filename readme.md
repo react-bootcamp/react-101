@@ -119,8 +119,8 @@ If you don't want to/can't use the online version of the API, and want to run it
 ```sh
 git clone https://github.com/react-bootcamp/wines-api.git wines-api
 cd wines-api
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 Then go to [http://localhost:3000](http://localhost:3000) to explore the documentation of the different routes available.
