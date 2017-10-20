@@ -162,7 +162,8 @@ export class MyComponent extends Component {
 You can provide some validation for the `props` of a component using `React.PropTypes` to have error message in developement. it's quite useful when you provide components to other dev teams.
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class MyComponent extends Component {
 
@@ -290,7 +291,8 @@ Let's write a nice component that will display details of a wine. This wine will
 First let's just display it's name
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class Wine extends Component {
 
@@ -399,7 +401,8 @@ Let say the `<Wine />` component should now look like
 to achieve that, you will create a new component called `<LikeButton />` with the following contract
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class LikeButton extends Component {
 

@@ -32,7 +32,8 @@ the comment button is a very simple component, its only job is to trigger the `<
 The contract of `<CommentButton />` is the following
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class CommentButton extends Component {
   static propTypes = {
@@ -59,7 +60,8 @@ The only issue is that the [materialize css modal component](http://materializec
 The contract of `<CommentModal />` is the following
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class CommentModal extends Component {
 
@@ -121,7 +123,8 @@ to use this code inside a our React component, we need to get a reference to the
 To do that we are going to use React refs
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class CommentModal extends Component {
   ...

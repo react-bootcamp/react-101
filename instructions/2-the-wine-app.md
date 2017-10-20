@@ -83,7 +83,8 @@ Create all *Dumb Components*: `<Regions />`, `<WineList />` and `<Wine />` and i
 The `<Regions />` component just display a list of regions. The contract of the `<Regions />` component is the following
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class Regions extends Component {
   static propTypes = {
@@ -142,7 +143,8 @@ the view of `<WineList />` component will look something like
 The `<Wine />` component display a list of wine for the selected region. The contract of the `<Wine />` component is the following
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class Wine extends Component {
 

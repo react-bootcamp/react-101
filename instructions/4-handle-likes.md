@@ -37,7 +37,8 @@ export function isWineLiked(id) {
 Now, you have to write a new component to display the `like` button into a `<Wine />` component. The button will be added in the `card-action` section. This component will have the following contract
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class LikeButton extends Component {
 
@@ -71,7 +72,8 @@ when the wine is liked, the button must look something like the following snippe
 If you need to react to the change of a property value in a component, you can use the `componentWillReceiveProps` function
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class LikeButton extends Component {
 
