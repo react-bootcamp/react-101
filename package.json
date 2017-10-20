@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.14"
   },
   "dependencies": {
     "es-symbol": "1.1.2",
     "es6-shim": "0.35.3",
-    "react": "15.5.4",
-    "react-dom": "15.5.4",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
