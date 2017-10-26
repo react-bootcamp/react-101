@@ -66,7 +66,7 @@ import PropTypes from 'prop-types';
 export class CommentModal extends Component {
 
   static propTypes = {
-    isOpen: PropTypes.boolean
+    isOpen: PropTypes.bool
   };
 
   state = {
